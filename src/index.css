@@ -1,13 +1,113 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+* {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background-color: #22254b;
+  color: whitesmoke;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+
+header {
+  background-color: #373b69;
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.search {
+  border: 2px solid #22254b;
+  border-radius: 20px;
+  padding: 0.2rem 1rem;
+  font-family: inherit;
+  font-size: 1.2rem;
+  background-color: transparent;
+  color: #fff;
+}
+
+.movie-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  padding: 20px;
+
+  justify-content: center;
+}
+
+@media (max-width: 580px) {
+  .movie-list {
+    justify-items: center;
+  }
+  .movie img {
+    min-width: 50vh;
+  }
+  header {
+    justify-content: center;
+  }
+}
+
+.movie {
+  background-color: #373b69;
+  margin: 1rem;
+  border-radius: 5px;
+  box-shadow: 0px -3px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+.movie img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.movie-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.movie-info h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.movie-overview {
+  background-color: #fff;
+  color: #373b69;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  overflow: auto;
+  padding: 1rem;
+  transform: translateY(102%);
+  transition: transform 0.3s ease-in-out;
+  max-height: 100%;
+}
+
+.movie:hover .movie-overview {
+  transform: translateY(0%);
+}
+
+.tag {
+  background-color: #22254b;
+  border-radius: 5px;
+  padding: 0.5rem;
+  font-weight: bold;
+}
+
+.tag.green {
+  color: green;
+}
+
+.tag.orange {
+  color: orange;
+}
+
+.tag.red {
+  color: red;
 }
